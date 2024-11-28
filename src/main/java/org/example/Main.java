@@ -6,11 +6,7 @@ public class Main {
     public static int yamsGame(int nombre, int nombre2, int nombre3, int nombre4, int nombre5){
         int[] valeurs = {nombre, nombre2, nombre3, nombre4, nombre5};
         int compteursValeursMax = lancer(valeurs);
-        if(compteursValeursMax == 5){
-            System.out.println(50);
-            return 50;
-        }
-        return 0;
+        return analayse(valeurs, compteursValeursMax);
     }
     public static int lancer(int[] valeurs){
         int compteursValeursMax = 0;
@@ -26,5 +22,21 @@ public class Main {
             }
         }
         return compteursValeursMax;
+    }
+    public static int analayse(int[] valeurs, int compteursValeursMax){
+        int resultat = 0;
+        for(int valeur : valeurs){
+            resultat += valeur;
+        }
+        if(compteursValeursMax == 5){
+            resultat = 50;
+            return resultat;
+        }
+        else if(compteursValeursMax == 4){
+            resultat = 40;
+            return resultat;
+        }
+        System.out.println(resultat);
+        return resultat;
     }
 }
