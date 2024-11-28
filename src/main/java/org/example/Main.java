@@ -3,8 +3,10 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
     }
-    public static int yamsGame(int nombre, int nombre2, int nombre3, int nombre4, int nombre5){
-        int[] valeurs = {nombre, nombre2, nombre3, nombre4, nombre5};
+    public static int yamsGame(int[] valeurs){
+        if(valeurs.length != 5){
+            throw new IllegalArgumentException("Il faut 5 éléments");
+        }
         int compteurValeursMax = lancer(valeurs);
         return analayse(valeurs, compteurValeursMax);
     }
@@ -40,6 +42,7 @@ public class Main {
             resultat = 28;
             return resultat;
         }
+
         System.out.println(resultat);
         return resultat;
     }
