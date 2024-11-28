@@ -11,8 +11,8 @@ public class MainTest {
     }
     @Test
     public void testYamsEchec(){
-        int resultat = Main.yamsGame(1,2,3,1,1);
-        assertEquals(8, resultat);
+        int resultat = Main.yamsGame(1,2,3,2,1);
+        assertEquals(9, resultat);
     }
     @Test
     public void testCarreSucces(){
@@ -21,7 +21,17 @@ public class MainTest {
     }
     @Test
     public void testCarreEchec(){
+        int resultat = Main.yamsGame(1,4,1,2,2);
+        assertEquals(10, resultat);
+    }
+    @Test
+    public void testBrelanSucces(){
         int resultat = Main.yamsGame(1,1,1,2,2);
-        assertEquals(7, resultat);
+        assertEquals(28, resultat);
+    }
+    @Test
+    public void testBrelanEchec(){
+        int resultat = Main.yamsGame(1,2,5,3,2);
+        assertEquals(13, resultat);
     }
 }
